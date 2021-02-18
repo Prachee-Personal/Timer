@@ -45,11 +45,29 @@ function validateSeconds() {
     return "";
 }
 
+function validateMaxTimeAllowed(totalSecondsCalculated) {
+    if (totalSecondsCalculated > (365 * 24 * 60 * 60)) {
+        return "Entered time is greater than 365 days";
+    }
+    return "";
+}
+
 function calculateTotalSeconds() {
-    var daysEntered  = d.value;
-    var hoursEntered  = h.value;
-    var minutesEntered  = m.value;
-    var secondsEntered  = s.value;
+    var daysEntered = d.value;
+    var hoursEntered = h.value;
+    var minutesEntered = m.value;
+    var secondsEntered = s.value;
+    console.log("hoursEntered",hoursEntered);
+    console.log("daysEntered",daysEntered);
+    console.log("minutesEntered",minutesEntered);
+    console.log("secondsEntered",secondsEntered);
+    var totalSecondsCalculated = Number(daysEntered * 24 * 60 * 60) + Number(hoursEntered * 60 * 60) +
+        Number(minutesEntered * 60) + Number(secondsEntered);
+    //     console.log("daysCal",(daysEntered * 24 * 60 * 60))
+    //     console.log("hoursCal",(hoursEntered * 60 * 60))
+    //     console.log("minCal",(minutesEntered * 60))
+    console.log(totalSecondsCalculated);
+    return totalSecondsCalculated;
 }
 
 function validateTimerValues() {
@@ -74,7 +92,46 @@ function validateTimerValues() {
     if (validateMessage.length > 0) {
         return validateMessage;
     }
+    var totalSecondsCalculated = calculateTotalSeconds();
+
+    validateMessage = validateMaxTimeAllowed(totalSecondsCalculated);
+    if (validateMessage.length > 0) {
+        return validateMessage;
+    }else {
+        setDisplayTime(totalSecondsCalculated);
+    }
     return validateMessage;
+}
+
+function setDisplayTime(totalSecondsCalculated) {
+    if (totalSecondsCalculated >= Number(24*60*60)) {
+        d.value = Math.floor(totalSecondsCalculated/Number(24 * 60 * 60));
+        totalSecondsCalculated = totalSecondsCalculated % Number(24 * 60 * 60);
+    }else {
+        d.value = 0;
+    }
+
+    if (totalSecondsCalculated >= Number(60*60)) {
+        h.value = Math.floor(totalSecondsCalculated/Number(60 * 60));
+        totalSecondsCalculated = totalSecondsCalculated % Number(60 * 60);
+    }else {
+        h.value = 0;
+    }
+
+    if (totalSecondsCalculated >= Number(60)) {
+        m.value = Math.floor(totalSecondsCalculated/Number(60));
+        totalSecondsCalculated = totalSecondsCalculated % Number(60);
+    }else {
+        m.value = 0;
+    }
+
+    if (totalSecondsCalculated < Number(60)) {
+        s.value = totalSecondsCalculated;
+    }
+    console.log("d.value",d.value);
+    console.log("h.value",h.value);
+    console.log("m.value",m.value);
+    console.log("s.value",s.value);
 }
 
 function timer() {
@@ -92,7 +149,7 @@ function timer() {
         m.value = 60;
         h.value--;
     } else if (d.value != 0 && h.value == 0) {
-        h.value = d.value * 24;
+        h.value = 24;
         d.value--;
     }
     return;

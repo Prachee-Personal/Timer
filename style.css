@@ -10,9 +10,10 @@ html,
 body {
   font-size: 20px;
   font-family: "Montserrat" sans-serif;
-  overflow-x: hidden;
-  background-image: url("./assets/images/timer_background.jpg")
+  overflow: hidden;
+  background-image: url("./assets/images/timer_light_background.jpg");
 }
+
 #container {
   min-height: 100vh;
   width: 100%;
@@ -61,3 +62,4 @@ body {
   left: 15%;
   position: fixed;
 }
+

@@ -11,6 +11,7 @@
   <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.css">
   <!-- Popper JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
@@ -20,11 +21,12 @@
 </head>
 
 <body>
-  <div class="title">
-    <h2 class="page-title fontweight-bold">Count Down Timer </h2>
+  <div class="jumbotron bg-transparent">
+    <h3 class="display-4 fontweight-bold text-center">Count Down Timer </h3>
+    <!-- <p class="lead text-center">This web site will help you set timer for your desired time</p> -->
   </div>
-  <div class="jumbotron bg-gradient container-position">
-      <div id="labels">
+  <div class="jumbotron bg-transparent container-position">
+      <div id="labels" class="col-md">
         <label id="day-label" class="label">Days:</label>
         <input id="day" placeholder="Day" type="number" max='365' min="0" value="0" class="time">
         &nbsp;
@@ -37,7 +39,7 @@
         <label id="second-label" class="label">Seconds:</label>
         <input id="second" placeholder="Seconds" type="number" max='60' min="0" value="0" class="time">
       </div>
-      <div class="button-container justify-content-center">
+      <div class= "col-md button-container justify-content-center">
         <label id="startInfo"></label>
         <button id="start" class="btn btn-primary">Start</button>
         &nbsp;&nbsp;
