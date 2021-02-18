@@ -1,7 +1,13 @@
 var start = document.getElementById('start');
 var reset = document.getElementById('reset');
 var pause = document.getElementById('pause');
-// var resume = document.getElementById('resume');
+var startInfo = document.getElementById('startInfo');
+var resetInfo = document.getElementById('resetInfo');
+var pauseInfo = document.getElementById('pauseInfo');
+
+
+
+
 pause.disabled = true;
 var d = document.getElementById('day');
 var h = document.getElementById('hour');
@@ -37,6 +43,13 @@ function validateSeconds() {
         return "Number of Seconds can be in the range of 0 to " + (365 * 24 * 60 * 60);
     }
     return "";
+}
+
+function calculateTotalSeconds() {
+    var daysEntered  = d.value;
+    var hoursEntered  = h.value;
+    var minutesEntered  = m.value;
+    var secondsEntered  = s.value;
 }
 
 function validateTimerValues() {

@@ -1,27 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color:black;
-    
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: black;
+  font-size: 25px;
 }
-html,body {
-    font-size: 20px;
-    font-family:'Montserrat' sans-serif;
-    overflow-x: hidden;
-}  
+html,
+body {
+  font-size: 20px;
+  font-family: "Montserrat" sans-serif;
+  overflow-x: hidden;
+  background-image: url("./assets/images/timer_background.jpg")
+}
+#container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: (to right, #007991, #78ffd6);
+}
+.bg-gradient {
+  background: #007991;
+  background: -webkit-linear-gradient(to right, #007991, #78ffd6);
+  background: linear-gradient(to right, #007991, #78ffd6);
+}
 
-#container{
-    min-height:100vh;
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background-color:(to right, #007991, #78ffd6);
+.time {
+  border-radius: 5px;
 }
-.bg-gradient{
-    background: #007991;
-    background: -webkit-linear-gradient(to right, #007991, #78ffd6); 
-    background: linear-gradient(to right, #007991, #78ffd6);
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50px;
+  color: black;
+  
+}
+.labels {
+  display: inline-flex;
+  justify-content: space-between;
+}
+.list-inline {
+  display: flex;
+  justify-content: space-evenly;
+}
+#labels {
+  font-size: 30px;
+}
+
+.button-container {
+    display: flex;
+    justify-content:space-evenly;
+}
+
+.container-position {
+  clear: both;
+  top: 40%;
+  left: 15%;
+  position: fixed;
 }
