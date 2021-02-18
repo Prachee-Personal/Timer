@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./style.css"
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Count Down Timer</title> 
+</head>
+<body>
+  <div class="bg-gradient">
+    
+    <div id="container">
+      <h2 class="page-title fontweight-bold">Your's Count Down Timer </h2>
+        <div>
+        <p id="day-label" class="label">Days</p>
+        <p id="hour-label" class="label">Hours</p>
+        <p id="minute-label" class="label">Minutes</p>
+        <p id="second-label" class="label">Seconds</p>
+      </div>
+      <div>
+        <input id="day" placeholder="Day" type="number" max='365' min="0" value="0" class="time"><p id="p1" class="semicolon">:</p>
+        <input id="hour" placeholder="Hours" type="number" max='99' min="0" value="0" class="time"><p id="p2" class="semicolon">:</p>
+        <input id="minute" placeholder="Minute" type="number" max='60' min="0" value="0" class="time"><p id="p3" class="semicolon">:</p>
+        <input id="second" placeholder="Seconds" type="number" max='60' min="0" value="0" class="time"><p id="p4" class="semicolon"></p>
+      </div>
+        <div>
+        <button id="start" class="btn btn-primary">Start</button>
+        <button id="reset" class="btn btn-secondary">Reset</button>
+        <button id="pause" class="btn btn-success">Pause</button>
+        <!-- <button id="resume" class="btn">resume</button> -->
+        </div>
+    </div>
+  </div>
+    <script src="main.js"></script>
+</body>
+</html>
