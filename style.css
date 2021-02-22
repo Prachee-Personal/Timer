@@ -10,9 +10,10 @@ html,
 body {
   font-size: 20px;
   font-family: "Montserrat" sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
   background-image: url("./assets/images/timer_light_background.jpg");
 }
+
 
 #container {
   min-height: 100vh;
@@ -63,3 +64,20 @@ body {
   position: fixed;
 }
 
+.message-position {
+  clear: both;
+  top: 80%;
+  left: 45%;
+  font-weight:bold;
+  color:white;
+}
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="./style.css" <!-- Latest compiled and minified CSS -->
-  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
   <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.css">
   <!-- Popper JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
@@ -23,32 +23,33 @@
 <body>
   <div class="jumbotron bg-transparent">
     <h3 class="display-4 fontweight-bold text-center">Count Down Timer </h3>
-    <!-- <p class="lead text-center">This web site will help you set timer for your desired time</p> -->
   </div>
   <div class="jumbotron bg-transparent container-position">
-      <div id="labels" class="col-md">
-        <label id="day-label" class="label">Days:</label>
-        <input id="day" placeholder="Day" type="number" max='365' min="0" value="0" class="time">
-        &nbsp;
-        <label id="hour-label" class="label">Hours:</label>
-        <input id="hour" placeholder="Hours" type="number" max='99' min="0" value="0" class="time">
-        &nbsp;
-        <label id="minute-label" class="label">Minutes:</label>
-        <input id="minute" placeholder="Minute" type="number" max='60' min="0" value="0" class="time">
-        &nbsp;
-        <label id="second-label" class="label">Seconds:</label>
-        <input id="second" placeholder="Seconds" type="number" max='60' min="0" value="0" class="time">
-      </div>
-      <div class= "col-md button-container justify-content-center">
-        <label id="startInfo"></label>
-        <button id="start" class="btn btn-primary">Start</button>
-        &nbsp;&nbsp;
-        <label id="pauseInfo" text=""></label>
-        <button id="pause" class="btn btn-success">Pause</button>
-        &nbsp;&nbsp;
-        <label id="resetInfo" text=""></label>
-        <button id="reset" class="btn btn-secondary">Reset</button>
-      </div>
+    <div id="labels">
+      <label id="day-label" class="label">Days:</label>
+      <input id="day" placeholder="Day" type="number" max='365' min="0" value="0" class="time">
+      &nbsp;
+      <label id="hour-label" class="label">Hours:</label>
+      <input id="hour" placeholder="Hours" type="number" max='99' min="0" value="0" class="time">
+      &nbsp;
+      <label id="minute-label" class="label">Minutes:</label>
+      <input id="minute" placeholder="Minute" type="number" max='60' min="0" value="0" class="time">
+      &nbsp;
+      <label id="second-label" class="label">Seconds:</label>
+      <input id="second" placeholder="Seconds" type="number" max='60' min="0" value="0" class="time">
+     
+    </div>
+    <div class="button-container justify-content-center">
+      <label id="startInfo"></label>
+      <button id="start" class="btn btn-primary">Start</button>
+      &nbsp;&nbsp;
+      <label id="pauseInfo" text=""></label>
+      <button id="pause" class="btn btn-success">Pause</button>
+      &nbsp;&nbsp;
+      <label id="resetInfo" text=""></label>
+      <button id="reset" class="btn btn-secondary">Reset</button>
+    </div>
+   <label id ="end" class="message-position blink_me"></label>
   </div>
   <script src="main.js"></script>
 </body>
