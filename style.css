@@ -66,10 +66,13 @@ body {
 
 .message-position {
   clear: both;
+  display: flex;
+  justify-content: center;
   top: 80%;
   left: 45%;
   font-weight:bold;
   color:white;
+  padding-top: 15px;
 }
 
 .blink_me {
