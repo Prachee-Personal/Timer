@@ -11,6 +11,7 @@ var h = document.getElementById('hour');
 var m = document.getElementById('minute');
 var s = document.getElementById('second');
 var end = document.getElementById('end');
+var labelsDiv = document.getElementById('labels');
 
 var startTimer = null;
 
@@ -121,11 +122,20 @@ function setDisplayTime(totalSecondsCalculated) {
     }
 }
 
+function disableTimerFields(doEnable) {
+    d.disabled = doEnable;
+    h.disabled = doEnable;
+    m.disabled = doEnable;
+    s.disabled = doEnable;
+}
+
 function timer() {
     if (d.value == 0 && h.value == 0 && m.value == 0 && s.value == 0) {
             clearInterval(startTimer)
             document.getElementById("end").innerHTML = "TIME EXPIRED";
             pause.disabled = true;
+            disableTimerFields(false);
+            start.disabled = false;
     } else if (s.value != 0) {
         s.value--;
     } else if (m.value != 0 && s.value == 0) {
@@ -147,6 +157,7 @@ function stopTimer() {
 }
 
 start.addEventListener('click', function () {
+    document.getElementById("end").innerHTML = "";
     if (!(d.value == 0 && h.value == 0 && m.value == 0 && s.value == 0)) {
         start.disabled = true;
         pause.disabled = false;
@@ -165,6 +176,8 @@ start.addEventListener('click', function () {
         throw new Error("Validation Failed");
     }
 
+    disableTimerFields(true);
+
     startTimer = setInterval(function () {
         timer();
     }, 1000);
@@ -180,6 +193,7 @@ reset.addEventListener('click', function () {
     pause.disabled = true;
     pause.innerHTML = "Pause";
     document.getElementById("end").innerHTML = "";
+    disableTimerFields(false);
 })
 
 pause.addEventListener('click', function () {
